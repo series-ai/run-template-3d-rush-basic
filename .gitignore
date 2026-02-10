@@ -1,27 +1,68 @@
-# Dependencies
+# Dependency directories
 node_modules/
-venus-three/node_modules/
+.npm/
 
-# Build output
-dist/
-venus-three/dist/
+dist
+dist.zip
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
+# Compiled output
+/build
+/lib
 
 # Logs
+logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Environment
+# Environment variables
 .env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
+# Editor and OS files
+.DS_Store
+# .idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+Thumbs.db
+*.swp
+*.swo
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Babylon.js specific
+*.babylon
+*.manifest
+*.babylon.manifest
+*.babylon-manifest
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Coverage directory
+coverage/
+
+# Installer packages
+node_installer.msi
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity 
+
+
+.app
