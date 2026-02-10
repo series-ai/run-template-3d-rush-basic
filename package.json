@@ -1,0 +1,28 @@
+{
+  "name": "3d-character-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:engine": "cd rundot-3D-engine && npm run build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d": "^0.11.2",
+    "@dimforge/rapier3d-compat": "^0.11.2",
+    "@series-ai/rundot-3d-engine": "file:./rundot-3D-engine",
+    "three": "^0.180.0",
+    "three-stdlib": "^2.36.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "@types/three": "^0.180.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.5.0"
+  }
+}
+
