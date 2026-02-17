@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "rundot-3D-engine"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:engine": "cd rundot-3D-engine && npm run build",
+    "build:engine": "npm run build -w @series-ai/rundot-3d-engine",
+    "build:all": "npm run build:engine && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@dimforge/rapier3d": "^0.11.2",
     "@dimforge/rapier3d-compat": "^0.11.2",
-    "@series-ai/rundot-3d-engine": "file:./rundot-3D-engine",
     "three": "^0.180.0",
     "three-stdlib": "^2.36.0"
   },
