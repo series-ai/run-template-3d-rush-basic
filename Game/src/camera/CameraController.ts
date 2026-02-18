@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { Component, GameObject } from "@series-ai/rundot-3d-engine"
+import { Component, GameObject } from "@series-inc/rundot-3d-engine"
 
 /**
  * Camera controller component for simulation games (Three.js version)

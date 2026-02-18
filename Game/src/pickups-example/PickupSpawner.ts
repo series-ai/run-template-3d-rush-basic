@@ -1,4 +1,4 @@
-import { Component, GameObject } from "@series-ai/rundot-3d-engine";
+import { Component, GameObject } from "@series-inc/rundot-3d-engine";
 import * as THREE from "three";
 import { Pickup } from "./Pickup";
 import { PickupSystem } from "./PickupSystem";

@@ -1,5 +1,5 @@
-import { RundotGameAPI } from "@series-ai/rundot-3d-engine"
-import { PrefabCollection, PrefabInstance, PrefabLoader, StowKitSystem } from "@series-ai/rundot-3d-engine/systems"
+import { RundotGameAPI } from "@series-inc/rundot-3d-engine"
+import { PrefabCollection, PrefabInstance, PrefabLoader, StowKitSystem } from "@series-inc/rundot-3d-engine/systems"
 
 export class Instantiation {
     private static prefabCollection?: PrefabCollection

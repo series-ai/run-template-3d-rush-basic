@@ -1,12 +1,12 @@
 import * as THREE from "three"
-import { AssetManager, GameObject, VenusGame, InstancedMeshManager, RundotGameAPI } from "@series-ai/rundot-3d-engine"
+import { AssetManager, GameObject, VenusGame, InstancedMeshManager, RundotGameAPI } from "@series-inc/rundot-3d-engine"
 import {
   PhysicsSystem,
   PrefabCollection,
   PrefabLoader,
   SharedAnimationManager,
   StowKitSystem,
-} from "@series-ai/rundot-3d-engine/systems"
+} from "@series-inc/rundot-3d-engine/systems"
 import { CameraController } from "./camera"
 import { Instantiation } from "./Instantiation"
 import { PickupSystem } from "./pickups-example"

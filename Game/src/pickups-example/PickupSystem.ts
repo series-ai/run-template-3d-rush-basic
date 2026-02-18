@@ -1,7 +1,7 @@
 import { Pickup } from "./Pickup"
 import { PickupTextUI } from "./PickupTextUI"
 import { PickupSpawner } from "./PickupSpawner"
-import { GameObject } from "@series-ai/rundot-3d-engine"
+import { GameObject } from "@series-inc/rundot-3d-engine"
 
 export class PickupSystem {
     private static activePickups: Set<Pickup> = new Set<Pickup>()
