@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "rundot-3D-engine"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
