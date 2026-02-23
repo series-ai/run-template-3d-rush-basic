@@ -32,11 +32,9 @@ Write creates parent directories automatically — no Bash needed. Note the exac
 
 Use `mcp__playwright__browser_navigate` to go to `http://localhost:<PORT>/`.
 
-## 4. Set mobile viewport
+Mobile device emulation (viewport, touch events, user agent) is handled automatically by the Playwright MCP server config — no manual resize needed.
 
-Use `mcp__playwright__browser_resize` with width 390 and height 844 (iPhone-sized) to simulate a mobile player.
-
-## 5. First look
+## 4. First look
 
 Use `mcp__playwright__browser_snapshot` to see what's on screen, and `mcp__playwright__browser_take_screenshot` to save the first screenshot as `<session-folder>/first-look.png`.
 

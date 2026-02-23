@@ -10,13 +10,7 @@ Use this skill whenever you want to click something and **see what happens** -- 
 
 ## Step 1: Identify the click target
 
-Look at your most recent snapshot or screenshot. Estimate the **pixel coordinates** (x, y) of the thing you want to click. The viewport is 390x844.
-
-Tips:
-- Center of screen is roughly (195, 422)
-- Elements near the top: y ~ 50-200
-- Elements in the middle: y ~ 300-500
-- Elements near the bottom: y ~ 600-800
+Look at your most recent snapshot or screenshot. Estimate the **pixel coordinates** (x, y) of the thing you want to click based on what you see.
 
 Remember these coordinates -- you'll use them in the next step.
 
