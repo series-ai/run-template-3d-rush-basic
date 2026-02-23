@@ -33,7 +33,13 @@ The agent uses Playwright MCP to control a browser. It looks at the screen, deci
 | `.playtester/INDEX.md` | Master table of all playtest sessions (date, summary, verdict) |
 | `.playtester/session-*/` | Per-session artifacts: report + screenshots |
 
-This works today but only against a local dev server, and requires manual invocation.
+This works today but only against a local dev server, and requires manual invocation:
+
+```
+"playtest the game and give me feedback"
+```
+
+Make sure the game's dev server is running first.
 
 ---
 

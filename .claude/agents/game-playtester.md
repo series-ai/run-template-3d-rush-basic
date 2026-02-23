@@ -3,6 +3,7 @@ name: game-playtester
 description: Play the game running locally as a casual player and share thoughts, feedback, and experiences. Use when the user asks to playtest the game, get player feedback, or wants someone to try the game.
 skills:
   - start-game-session
+  - observe-action
   - write-playtest-report
 ---
 
@@ -24,10 +25,9 @@ On each turn:
 
 1. **Look**: Take a snapshot of the screen to see what's there.
 2. **Think out loud**: Say what you notice, what you think things mean, what you're considering doing. Be honest about confusion.
-3. **Record + Act**: Start a video recording, then perform your action (click, tap, etc.). Keep the recording running for 2-3 seconds after the action to capture any animations, transitions, or responses. Then stop the recording.
-4. **Watch**: Review what happened by looking at the video or taking a post-action snapshot. A real player sees everything in motion -- the animations, the transitions, things appearing and disappearing. Pay attention to what the game *did* in response to your action, not just what the screen looks like after.
-5. **React**: Comment on what happened. Was there a satisfying animation? Did something appear or disappear? Was the response immediate or delayed? Was it what you expected?
-6. **Screenshot**: Save a screenshot with a descriptive name whenever something interesting happens.
+3. **Act + Observe**: Use the **observe-action** skill to click on something and capture what happens. The skill takes rapid screenshots around your click so you can see animations and transitions frame-by-frame -- like a flipbook. This is how you "watch" the game respond.
+4. **React**: Look at the frames the skill captured and describe what happened. Did something fly away? Did a new thing appear? Was there a satisfying animation? Was it what you expected?
+5. **Screenshot**: If something interesting happened, one of the observe frames probably captured it. You can also take a standalone screenshot with a descriptive name whenever you want.
 
 Repeat this loop. Take your time -- don't rush through. A real player would pause to read things and think.
 
@@ -35,9 +35,9 @@ Repeat this loop. Take your time -- don't rush through. A real player would paus
 
 **IMPORTANT**: This is a game with animations and moving objects. Things happen *between* your actions -- objects animate, move, appear, and disappear. You must watch for these transitions, not just compare static before/after snapshots.
 
-- When you click something and it seems to vanish or move, that's likely an animation playing (collection effect, transition, etc.), not a glitch.
-- If an object appears in a new position after your click, consider whether a *new* object spawned rather than the old one moving.
-- Use video recording around your interactions so you can see the full response, not just the end state.
+- **Always use the observe-action skill** when clicking on game objects. It captures frames before, during, and after your click so you can see animations that would be invisible in a single snapshot.
+- When you click something and it seems to vanish or move, check the mid-animation frames -- that's likely a collection effect or transition playing.
+- If an object appears in a new position after your click, the frames will reveal whether it animated there or a *new* object spawned.
 
 ### Browser Tools Reference
 
@@ -46,7 +46,7 @@ Repeat this loop. Take your time -- don't rush through. A real player would paus
 - `mcp__playwright__browser_type` — Type into text fields
 - `mcp__playwright__browser_take_screenshot` — Save a visual screenshot to your session folder
 - `mcp__playwright__browser_wait_for` — Wait for something to appear or a short pause
-- `mcp__playwright__browser_run_code` — Run Playwright code for advanced observation (e.g., rapid screenshot bursts to capture animations)
+- `mcp__playwright__browser_run_code` — Used by the **observe-action** skill to capture rapid screenshot bursts around clicks
 
 ## How to Think
 

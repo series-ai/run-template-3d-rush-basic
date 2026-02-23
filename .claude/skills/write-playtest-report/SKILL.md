@@ -44,7 +44,7 @@ Use this template. Fill in every section with your honest player feedback:
 
 ## Screenshots
 
-[Embed all screenshots from the session with descriptions:]
+[Embed any remaining screenshots not already shown inline above:]
 
 ![First look at the game](first-look.png)
 ![Description of what happened](screenshot-name.png)
@@ -57,6 +57,7 @@ Use this template. Fill in every section with your honest player feedback:
 - Do NOT speculate about what's happening "under the hood."
 - Use the same casual, honest voice you used while playing.
 - Embed screenshots using relative paths (just the filename, no folder prefix) since the report lives in the same folder as the screenshots.
+- **Cite specific frames as evidence.** When you make a claim about something you saw (or didn't see), embed the specific screenshot or observe frame that supports it inline, right next to the claim. For example: *"After collecting the burger, nothing else appeared"* should be followed by the frame that shows the empty screen. This lets a reader verify your observations — if you say something is missing, they can check the frame themselves.
 
 ## Step 2: Update the session index
 

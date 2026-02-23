@@ -20,13 +20,13 @@ If that finds nothing, try checking common dev server ports (3000, 5173, 8080, 4
 
 ## 2. Create a session folder
 
-Run:
+Generate a timestamp in `YYYYMMDD-HHMMSS` format and use the **Write** tool to create a `.gitkeep` file at:
 
 ```
-mkdir -p .playtester/session-$(date +%Y%m%d-%H%M%S)
+.playtester/session-<TIMESTAMP>/.gitkeep
 ```
 
-Note the exact folder path. All screenshots this session go into this folder.
+Write creates parent directories automatically — no Bash needed. Note the exact folder path. All screenshots this session go into this folder.
 
 ## 3. Open the game
 
