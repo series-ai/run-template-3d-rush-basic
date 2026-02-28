@@ -2,17 +2,14 @@ import * as THREE from "three"
 import {AssetManager, GameObject, VenusGame} from "@series-inc/rundot-3d-engine"
 import {
   PhysicsSystem,
-  PrefabCollection,
-  PrefabLoader,
   SharedAnimationManager,
-  StowKitSystem,
 } from "@series-inc/rundot-3d-engine/systems"
 import {CameraController} from "./camera"
-import {Instantiation} from "./Instantiation"
+import {Prefabs} from "./Prefabs"
 import {PickupSystem} from "./pickups-example"
 
 /**
- * Generic 3D Template Game
+ * 3D Rush Template Basic Game
  * Provides a basic 3D scene with camera and pickup system example
  */
 export class GenericTemplateGame extends VenusGame {
@@ -20,7 +17,6 @@ export class GenericTemplateGame extends VenusGame {
 
   private cameraObject?: GameObject
   private simCamera?: CameraController
-  private prefabCollection?: PrefabCollection
   
   /**
    * Configure VenusGame settings
@@ -67,27 +63,24 @@ export class GenericTemplateGame extends VenusGame {
    */
   protected async onDispose(): Promise<void> {
     // Cleanup logic goes here if needed
-    console.log("🧹 Cleaning up Generic Template Game")
+    console.log("🧹 Cleaning up 3D Rush Template Basic")
   }
 
   /**
    * Main setup - called by onStart
    */
   private async setup(): Promise<void> {
-    console.log("🎮 Starting Generic Template Game Setup...")
+    console.log("🎮 Starting 3D Rush Template Basic Setup...")
 
     // Initialize core systems
     await this.initializeSystems()
-
-    // Load assets
-    await this.loadAssets()
 
     // Create the world
     this.setupLighting()
     this.createGround()
     this.setupCamera()
 
-    console.log("✅ Generic Template Game Setup Complete!")
+    console.log("✅ 3D Rush Template Basic Setup Complete!")
   }
 
   /**
@@ -102,7 +95,7 @@ export class GenericTemplateGame extends VenusGame {
     // Initialize systems in parallel
     await Promise.all([
       PhysicsSystem.initialize(),
-      Instantiation.initialize(),
+      Prefabs.initialize(),
     ])
 
     // SharedAnimationManager
@@ -115,19 +108,6 @@ export class GenericTemplateGame extends VenusGame {
     PhysicsSystem.initializeDebug(this.scene)
 
     console.log("✅ Systems initialized")
-  }
-
-  /**
-   * Load assets (currently minimal for generic template)
-   */
-  private async loadAssets(): Promise<void> {
-    console.log("📦 Loading assets...")
-    const stowkit = StowKitSystem.getInstance()
-
-    // Load Core pack for basic assets
-    await stowkit.loadPack("Main", "Core.stow")
-
-    console.log("✅ Assets loaded")
   }
 
   /**
@@ -213,17 +193,6 @@ export class GenericTemplateGame extends VenusGame {
    */
   public getCamera(): CameraController | undefined {
     return this.simCamera
-  }
-
-  /**
-   * Instantiate a prefab
-   */
-  public instantiate(prefabPath: string) {
-    const prefab = this.prefabCollection?.getPrefabByName(prefabPath)
-    if (!prefab) {
-      throw new Error(`Prefab not found: ${prefabPath}`)
-    }
-    return PrefabLoader.instantiatePrefab(prefab)
   }
 }
 

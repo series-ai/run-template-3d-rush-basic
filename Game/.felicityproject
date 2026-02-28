@@ -1,4 +1,4 @@
 {
   "prefabsPath": "prefabs",
-  "cdnAssetsPath": "../public/cdn-assets"
+  "cdnAssetsPath": "public/cdn-assets"
 }

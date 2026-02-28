@@ -32,7 +32,6 @@ export class PickupSystem {
         // Add spawner component with configuration
         const spawner = new PickupSpawner({
             spawnInterval: 1,
-            spawnRadius: 8
         })
         this.spawnerObject.addComponent(spawner)
         

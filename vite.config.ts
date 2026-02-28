@@ -9,6 +9,11 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./Game/src"),
+      "@capacitor/core": path.resolve(__dirname, "./stubs/capacitor.ts"),
+      "@capacitor/app": path.resolve(__dirname, "./stubs/capacitor.ts"),
+      "@capacitor/local-notifications": path.resolve(__dirname, "./stubs/capacitor.ts"),
+      "@capacitor/preferences": path.resolve(__dirname, "./stubs/capacitor.ts"),
+      "@capacitor/splash-screen": path.resolve(__dirname, "./stubs/capacitor.ts"),
     },
   },
   optimizeDeps: {
@@ -26,7 +31,7 @@ export default defineConfig(() => ({
     target: "esnext",
     sourcemap: false,
   },
-  publicDir: "public",
+  publicDir: "Game/public",
   plugins: [
     wasm(),
     topLevelAwait(),

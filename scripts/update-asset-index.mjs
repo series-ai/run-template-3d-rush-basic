@@ -1,12 +1,12 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname, relative, basename } from 'path';
 import { fileURLToPath } from 'url';
-import { StowKitReader } from '@stowkit/reader';
+import { StowKitReader } from '@series-inc/stowkit-reader';
 
 // ---- CONFIGURATION ----
 const INDEX_SUFFIX = 'Assets';
 const LEGACY_INDEX_NAMES = ['Core.stow Asset List'];
-const CDN_ASSETS_DIR = 'public/cdn-assets';
+const CDN_ASSETS_DIR = 'Game/public/cdn-assets';
 const TARGET_FILES = ['CLAUDE.md', 'AGENTS.md'];
 const MIN_PREFIX_SAVINGS = 10;
 
@@ -69,7 +69,7 @@ function findStowFiles(dir) {
 
 /** Create a StowKitReader with WASM initialized from the filesystem */
 async function createReader() {
-  const wasmPath = join(ROOT, 'node_modules/@stowkit/reader/dist/stowkit_reader.wasm');
+  const wasmPath = join(ROOT, 'node_modules/@series-inc/stowkit-reader/dist/stowkit_reader.wasm');
 
   if (!existsSync(wasmPath)) {
     throw new Error(`WASM file not found at ${wasmPath}`);
