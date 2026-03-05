@@ -11,7 +11,7 @@ export enum GameState {
     Dead,
 }
 
-const SCROLL_SPEED = 7
+const SCROLL_SPEED = 6
 const DEATH_PAUSE = 0.6
 
 export class FlappyGame {
@@ -32,6 +32,7 @@ export class FlappyGame {
 
         const characterPrefab = Prefabs.instantiate("character")
         const birdObject = characterPrefab.gameObject
+        birdObject.rotation.y = -0.4
         this.bird = new Bird()
         birdObject.addComponent(this.bird)
 
@@ -56,12 +57,24 @@ export class FlappyGame {
         return SCROLL_SPEED
     }
 
+    private static musicStarted = false
+    private static onFirstStart?: () => void
+
+    public static setOnFirstStart(callback: () => void): void {
+        this.onFirstStart = callback
+    }
+
     public static start(): void {
         if (this.state !== GameState.Idle) return
         this.state = GameState.Playing
         this.score = 0
         this.ui.showPlaying()
         this.ui.updateScore(0)
+
+        if (!this.musicStarted) {
+            this.musicStarted = true
+            this.onFirstStart?.()
+        }
     }
 
     public static addScore(): void {

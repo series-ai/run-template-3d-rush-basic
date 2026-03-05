@@ -1,6 +1,14 @@
 import * as THREE from "three"
 import { AssetManager, GameObject, MeshRenderer, VenusGame } from "@series-inc/rundot-3d-engine"
-import { PhysicsSystem } from "@series-inc/rundot-3d-engine/systems"
+import {
+    AudioSystem,
+    Main2DAudioBank,
+    MusicBank,
+    PhysicsSystem,
+    SetMusicVolume,
+    StartPlaylistWithAutoplayHandling,
+    StowKitSystem,
+} from "@series-inc/rundot-3d-engine/systems"
 import { CameraController } from "./camera"
 import { Prefabs } from "./Prefabs"
 import { FlappyGame, GameState } from "./flappy"
@@ -18,7 +26,7 @@ export class GenericTemplateGame extends VenusGame {
             shadowMapType: "vsm" as const,
             toneMapping: "aces" as const,
             toneMappingExposure: 1.0,
-            audioEnabled: false,
+            audioEnabled: true,
         }
     }
 
@@ -56,15 +64,37 @@ export class GenericTemplateGame extends VenusGame {
         this.setupBackground()
         this.setupCamera()
         FlappyGame.initialize()
+        FlappyGame.setOnFirstStart(() => this.startMusic())
         this.createDebugToggle()
     }
 
     private async initializeSystems(): Promise<void> {
         AssetManager.init(this.scene)
+        AudioSystem.initialize()
         await Promise.all([
             PhysicsSystem.initialize(),
             Prefabs.initialize(),
         ])
+        await this.loadAudio()
+    }
+
+    private async loadAudio(): Promise<void> {
+        const stowkit = StowKitSystem.getInstance()
+        const [bite, jump, music] = await Promise.all([
+            stowkit.getAudio("bite"),
+            stowkit.getAudio("jump"),
+            stowkit.getAudio("music"),
+        ])
+        bite.setVolume(0.5)
+        jump.setVolume(0.5)
+        Main2DAudioBank["bite"] = bite
+        Main2DAudioBank["jump"] = jump
+        MusicBank["music"] = music
+    }
+
+    public startMusic(): void {
+        SetMusicVolume(0.2, MusicBank)
+        StartPlaylistWithAutoplayHandling(MusicBank, ["music"])
     }
 
     private setupLighting(): void {

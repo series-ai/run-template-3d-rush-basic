@@ -5,11 +5,11 @@
   "pack": "default",
   "type": "texture",
   "quality": "fast",
-  "resize": "full",
+  "resize": "half",
   "generateMipmaps": false,
   "cache": {
     "sourceSize": 19599,
     "sourceLastModified": 1772697253854,
-    "settingsHash": "2|q=0|r=0|m=false"
+    "settingsHash": "2|q=1|r=1|m=false"
   }
 }

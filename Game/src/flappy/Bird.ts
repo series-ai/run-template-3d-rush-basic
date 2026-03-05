@@ -1,6 +1,6 @@
 import * as THREE from "three"
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
-import { BoxColliderComponent } from "@series-inc/rundot-3d-engine/systems"
+import { BoxColliderComponent, Main2DAudioBank, PlayAudioOneShot2D } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
 import { Burger } from "./Burger"
 
@@ -75,6 +75,7 @@ export class Bird extends Component {
 
     private flap(): void {
         this.velocity = FLAP_VELOCITY
+        PlayAudioOneShot2D(Main2DAudioBank, "jump")
     }
 
     public update(deltaTime: number): void {

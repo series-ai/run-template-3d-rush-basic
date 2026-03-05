@@ -1,4 +1,5 @@
 import { Component } from "@series-inc/rundot-3d-engine"
+import { Easing, Main2DAudioBank, PlayAudioOneShot2D, TweenSystem } from "@series-inc/rundot-3d-engine/systems"
 import type { PrefabInstance } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
 import { Prefabs } from "../Prefabs"
@@ -11,6 +12,7 @@ export class Burger extends Component {
     private prefab!: PrefabInstance
     private collected = false
     private wobbleTime = Math.random() * Math.PI * 2
+    private tweenScale = 1
 
     protected onCreate(): void {
         this.prefab = Prefabs.instantiate("burger", this.gameObject)
@@ -32,8 +34,22 @@ export class Burger extends Component {
 
     public collect(): void {
         this.collected = true
+        PlayAudioOneShot2D(Main2DAudioBank, "bite")
         FlappyGame.addScore()
-        this.gameObject.dispose()
+
+        const pop = TweenSystem.tween(this, "tweenScale", 1.4, 0.05, Easing.easeOutQuad)
+        pop.onUpdated((v: number) => {
+            this.gameObject.scale.set(v, v, v)
+        })
+        pop.onCompleted(() => {
+            const shrink = TweenSystem.tween(this, "tweenScale", 0, 0.08, Easing.easeInQuad)
+            shrink.onUpdated((v: number) => {
+                this.gameObject.scale.set(v, v, v)
+            })
+            shrink.onCompleted(() => {
+                this.gameObject.dispose()
+            })
+        })
     }
 
     public getZ(): number {

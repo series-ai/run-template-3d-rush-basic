@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "stringId": "music",
+  "tags": [],
+  "pack": "default",
+  "type": "audio",
+  "aacQuality": "low",
+  "sampleRate": "22050",
+  "cache": {
+    "sourceSize": 1317006,
+    "sourceLastModified": 1772700351525,
+    "settingsHash": "3|aq=1|sr=22050"
+  }
+}
