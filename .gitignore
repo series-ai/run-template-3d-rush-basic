@@ -1,4 +1,5 @@
 .idea
+*.stowcache
 
 # Dependency directories
 node_modules/

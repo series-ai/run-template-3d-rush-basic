@@ -1,20 +1,11 @@
-// Entry point for 3D Rush Template Basic
 import "./styles/main.css"
 import { GenericTemplateGame } from "./GenericTemplateGame"
 
-(async function () {
-  console.log("🚀 Starting 3D Rush Template Basic...")
-
-  try {
-    // Create and start the game
-    const game = await GenericTemplateGame.create()
-
-    // Make game available for debugging in console
-    ;(window as any).game = game
-
-    console.log("✅ Template loaded successfully!")
-  } catch (error) {
-    console.error("❌ Failed to start 3D Rush Template Basic:", error)
-  }
+;(async function () {
+    try {
+        const game = await GenericTemplateGame.create()
+        ;(window as any).game = game
+    } catch (error) {
+        console.error("Failed to start game:", error)
+    }
 })()
-

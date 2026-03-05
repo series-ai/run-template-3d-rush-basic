@@ -1,4 +1,10 @@
 {
   "prefabsPath": "prefabs",
-  "cdnAssetsPath": "public/cdn-assets"
+  "cdnAssetsPath": "public/cdn-assets",
+  "srcArtDir": "src_art",
+  "packs": [
+    {
+      "name": "default"
+    }
+  ]
 }

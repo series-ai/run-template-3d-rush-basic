@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "t_saw_diffuse",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fastest",
+  "resize": "quarter",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 198720,
+    "sourceLastModified": 1772689186408,
+    "settingsHash": "2|q=0|r=0|m=false"
+  }
+}

@@ -1,198 +1,146 @@
 import * as THREE from "three"
-import {AssetManager, GameObject, VenusGame} from "@series-inc/rundot-3d-engine"
-import {
-  PhysicsSystem,
-  SharedAnimationManager,
-} from "@series-inc/rundot-3d-engine/systems"
-import {CameraController} from "./camera"
-import {Prefabs} from "./Prefabs"
-import {PickupSystem} from "./pickups-example"
+import { AssetManager, GameObject, MeshRenderer, VenusGame } from "@series-inc/rundot-3d-engine"
+import { PhysicsSystem } from "@series-inc/rundot-3d-engine/systems"
+import { CameraController } from "./camera"
+import { Prefabs } from "./Prefabs"
+import { FlappyGame, GameState } from "./flappy"
 
-/**
- * 3D Rush Template Basic Game
- * Provides a basic 3D scene with camera and pickup system example
- */
 export class GenericTemplateGame extends VenusGame {
-  private static _gameInstance: GenericTemplateGame
+    private static _gameInstance: GenericTemplateGame
+    private cameraObject?: GameObject
+    private simCamera?: CameraController
+    private bgMaterial?: THREE.Material
 
-  private cameraObject?: GameObject
-  private simCamera?: CameraController
-  
-  /**
-   * Configure VenusGame settings
-   */
-  protected getConfig() {
-    return {
-      backgroundColor: 0x87ceeb, // Sky blue background
-      shadowMapEnabled: true,
-      shadowMapType: "pcf_soft" as const,
-      toneMapping: "aces" as const,
-      toneMappingExposure: 1.0,
-      audioEnabled: false, // Simplified - no audio for template
+    protected getConfig() {
+        return {
+            backgroundColor: 0x6b7280,
+            shadowMapEnabled: true,
+            shadowMapType: "vsm" as const,
+            toneMapping: "aces" as const,
+            toneMappingExposure: 1.0,
+            audioEnabled: false,
+        }
     }
-  }
 
-  /**
-   * VenusGame required: Called once at startup
-   */
-  protected async onStart(): Promise<void> {
-    GenericTemplateGame._gameInstance = this
-    await this.setup()
-  }
-
-  /**
-   * Get the singleton instance of GenericTemplateGame
-   */
-  public static getInstance(): GenericTemplateGame {
-    if (!GenericTemplateGame._gameInstance) {
-      throw new Error("GenericTemplateGame not initialized")
+    protected async onStart(): Promise<void> {
+        GenericTemplateGame._gameInstance = this
+        await this.setup()
     }
-    return GenericTemplateGame._gameInstance
-  }
 
-  /**
-   * VenusGame required: Called every frame before rendering
-   */
-  protected preRender(deltaTime: number): void {
-    // Update logic goes here if needed
-    // Most updates are handled by the Component system automatically
-  }
+    public static getInstance(): GenericTemplateGame {
+        if (!GenericTemplateGame._gameInstance) {
+            throw new Error("GenericTemplateGame not initialized")
+        }
+        return GenericTemplateGame._gameInstance
+    }
 
-  /**
-   * VenusGame required: Cleanup
-   */
-  protected async onDispose(): Promise<void> {
-    // Cleanup logic goes here if needed
-    console.log("🧹 Cleaning up 3D Rush Template Basic")
-  }
+    protected preRender(deltaTime: number): void {
+        FlappyGame.update(deltaTime)
+        if (this.bgMaterial && FlappyGame.getState() === GameState.Playing) {
+            const mat = this.bgMaterial as THREE.MeshStandardMaterial
+            if (mat.map) {
+                mat.map.offset.x += deltaTime * 0.02
+            }
+        }
+    }
 
-  /**
-   * Main setup - called by onStart
-   */
-  private async setup(): Promise<void> {
-    console.log("🎮 Starting 3D Rush Template Basic Setup...")
+    protected async onDispose(): Promise<void> {
+        FlappyGame.dispose()
+    }
 
-    // Initialize core systems
-    await this.initializeSystems()
+    private async setup(): Promise<void> {
+        await this.initializeSystems()
+        PhysicsSystem.initializeDebug(this.scene)
+        PhysicsSystem.setDebugEnabled(false)
+        this.setupLighting()
+        this.setupBackground()
+        this.setupCamera()
+        FlappyGame.initialize()
+        this.createDebugToggle()
+    }
 
-    // Create the world
-    this.setupLighting()
-    this.createGround()
-    this.setupCamera()
+    private async initializeSystems(): Promise<void> {
+        AssetManager.init(this.scene)
+        await Promise.all([
+            PhysicsSystem.initialize(),
+            Prefabs.initialize(),
+        ])
+    }
 
-    console.log("✅ 3D Rush Template Basic Setup Complete!")
-  }
+    private setupLighting(): void {
+        const sun = new THREE.DirectionalLight(0xfff4e6, 2.2)
+        sun.position.set(-8, 15, 6)
+        sun.castShadow = true
+        sun.shadow.mapSize.set(2048, 2048)
+        sun.shadow.camera.left = -30
+        sun.shadow.camera.right = 30
+        sun.shadow.camera.top = 30
+        sun.shadow.camera.bottom = -30
+        sun.shadow.camera.near = 0.5
+        sun.shadow.camera.far = 60
+        sun.shadow.bias = -0.0005
+        sun.shadow.radius = 4
+        this.scene.add(sun)
+        this.scene.add(sun.target)
 
-  /**
-   * Initialize required systems
-   */
-  private async initializeSystems(): Promise<void> {
-    console.log("⚙️ Initializing systems...")
+        const fill = new THREE.DirectionalLight(0xb0d4ff, 0.6)
+        fill.position.set(6, 8, -4)
+        this.scene.add(fill)
 
-    // AssetManager
-    AssetManager.init(this.scene)
+        const ambient = new THREE.AmbientLight(0xffffff, 1)
+        this.scene.add(ambient)
+    }
 
-    // Initialize systems in parallel
-    await Promise.all([
-      PhysicsSystem.initialize(),
-      Prefabs.initialize(),
-    ])
+    private setupBackground(): void {
+        const bg = Prefabs.instantiate("background")
+        const renderer = bg.gameObject.getComponentInChildren(MeshRenderer)
+        if (!renderer) return
 
-    // SharedAnimationManager
-    SharedAnimationManager.getInstance()
+        renderer.onLoaded(() => {
+            const mat = renderer.getMaterial() as THREE.MeshStandardMaterial | null
+            if (mat?.map) {
+                this.bgMaterial = mat
+            }
+        })
+    }
 
-    // Initialize pickup system (EXAMPLE, remove this if not needed)
-    PickupSystem.initialize()
+    private setupCamera(): void {
+        this.cameraObject = new GameObject("Camera")
+        this.simCamera = new CameraController()
+        this.cameraObject.addComponent(this.simCamera)
+        this.camera = this.simCamera.getCamera()
+    }
 
-    // Physics debug visualization (optional)
-    PhysicsSystem.initializeDebug(this.scene)
+    public getCamera(): CameraController | undefined {
+        return this.simCamera
+    }
 
-    console.log("✅ Systems initialized")
-  }
+    private createDebugToggle(): void {
+        const label = document.createElement("label")
+        Object.assign(label.style, {
+            position: "fixed",
+            bottom: "12px",
+            right: "12px",
+            color: "white",
+            fontSize: "14px",
+            fontFamily: "'Segoe UI', sans-serif",
+            zIndex: "200",
+            cursor: "pointer",
+            userSelect: "none",
+            textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+        })
 
-  /**
-   * Setup lighting
-   */
-  private setupLighting(): void {
-    // Main directional light with shadows
-    const directionalLight = new THREE.DirectionalLight(
-      new THREE.Color(1.0, 0.98, 0.94),
-      1.0
-    )
-    directionalLight.position.set(10, 20, 10)
-    directionalLight.castShadow = true
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.checked = false
+        checkbox.style.marginRight = "6px"
+        checkbox.style.cursor = "pointer"
+        checkbox.addEventListener("change", () => {
+            PhysicsSystem.setDebugEnabled(checkbox.checked)
+        })
 
-    // Shadow settings
-    directionalLight.shadow.mapSize.width = 1024
-    directionalLight.shadow.mapSize.height = 1024
-    directionalLight.shadow.camera.near = 0.5
-    directionalLight.shadow.camera.far = 50
-    directionalLight.shadow.camera.left = -20
-    directionalLight.shadow.camera.right = 20
-    directionalLight.shadow.camera.top = 20
-    directionalLight.shadow.camera.bottom = -20
-    directionalLight.shadow.bias = -0.0005
-
-    this.scene.add(directionalLight)
-    this.scene.add(directionalLight.target)
-
-    // Ambient light for general fill
-    const ambientLight = new THREE.AmbientLight(
-      new THREE.Color(1.0, 0.97, 0.92),
-      0.6
-    )
-    this.scene.add(ambientLight)
-
-    console.log("💡 Lighting setup complete")
-  }
-
-  /**
-   * Create a simple ground plane
-   */
-  private createGround(): void {
-    const groundGeometry = new THREE.PlaneGeometry(100, 100)
-    const groundMaterial = new THREE.MeshStandardMaterial({
-      color: 0x7fc77f,
-      roughness: 0.8,
-      metalness: 0.2,
-    })
-
-    const ground = new THREE.Mesh(groundGeometry, groundMaterial)
-    ground.rotation.x = -Math.PI / 2
-    ground.receiveShadow = true
-    ground.position.y = 0
-
-    this.scene.add(ground)
-
-    console.log("🌍 Ground created")
-  }
-
-  /**
-   * Setup static camera looking at origin
-   */
-  private setupCamera(): void {
-    // Create camera GameObject
-    this.cameraObject = new GameObject("Camera")
-
-    // Add camera component
-    this.simCamera = new CameraController()
-    this.cameraObject.addComponent(this.simCamera)
-
-    // Enable controls (optional - allows mouse drag to rotate camera)
-    this.simCamera.setControlsEnabled(false)
-
-    // Get the camera and set it as the rendering camera
-    const simCameraInstance = this.simCamera.getCamera()
-    this.camera = simCameraInstance
-
-    console.log("📷 Camera setup complete")
-  }
-
-  /**
-   * Get the camera controller (for debugging)
-   */
-  public getCamera(): CameraController | undefined {
-    return this.simCamera
-  }
+        label.appendChild(checkbox)
+        label.appendChild(document.createTextNode("Physics Debug"))
+        document.body.appendChild(label)
+    }
 }
-

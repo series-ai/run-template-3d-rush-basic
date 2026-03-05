@@ -2,17 +2,17 @@
   "schema": "stow.prefab",
   "version": 0,
   "meta": {
-    "name": "pickup",
-    "created": "2026-02-28"
+    "name": "background",
+    "created": "2026-03-05"
   },
   "mounts": [
     {
-      "alias": "burgerrush",
-      "path": "burgershop.stow"
+      "alias": "default",
+      "path": "default.stow"
     }
   ],
   "root": {
-    "name": "pickup",
+    "name": "background",
     "components": [
       {
         "type": "transform",
@@ -35,34 +35,34 @@
     ],
     "children": [
       {
-        "name": "display",
+        "name": "background",
         "components": [
           {
             "type": "transform",
             "position": [
               0,
-              0,
+              -4.064183823009339,
               0
             ],
             "rotation": [
-              0,
-              0,
-              0
+              -180,
+              7.016709298534876e-15,
+              -180
             ],
             "scale": [
-              2,
-              2,
-              2
+              1.7728911708109816,
+              1.7728911708109816,
+              1.7728911708109816
             ]
           },
           {
             "type": "stow_mesh",
             "mesh": {
-              "pack": "burgerrush",
-              "assetId": "restaurant_display_prop_burger"
+              "pack": "default",
+              "assetId": "background"
             },
-            "castShadow": true,
-            "receiveShadow": true
+            "castShadow": false,
+            "receiveShadow": false
           }
         ]
       }

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "background",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "m_clouds.stowmat"
+  },
+  "cache": {
+    "sourceSize": 33488,
+    "sourceLastModified": 1772697322610,
+    "settingsHash": "1|dq=1"
+  }
+}

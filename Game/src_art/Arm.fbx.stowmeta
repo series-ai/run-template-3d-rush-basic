@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "arm",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "m_saw.stowmat"
+  },
+  "cache": {
+    "sourceSize": 38240,
+    "sourceLastModified": 1772689183867,
+    "settingsHash": "1|dq=1"
+  }
+}

@@ -1,4 +1,5 @@
 import RundotGameAPI from "@series-inc/rundot-game-sdk/api"
+import { GameObject } from "@series-inc/rundot-3d-engine"
 import { PrefabCollection, PrefabLoader, StowKitSystem } from "@series-inc/rundot-3d-engine/systems"
 
 export class Prefabs {
@@ -17,11 +18,11 @@ export class Prefabs {
         })
     }
 
-    public static instantiate(name: string) {
+    public static instantiate(name: string, parent?: GameObject) {
         const prefab = this.collection.getPrefabByName(name)
         if (!prefab) {
             throw new Error(`Prefab not found: ${name}`)
         }
-        return PrefabLoader.instantiatePrefab(prefab)
+        return PrefabLoader.instantiatePrefab(prefab, parent)
     }
 }

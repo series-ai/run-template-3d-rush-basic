@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "key",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "m_tinker.stowmat"
+  },
+  "cache": {
+    "sourceSize": 35968,
+    "sourceLastModified": 1772689185869,
+    "settingsHash": "1|dq=1"
+  }
+}

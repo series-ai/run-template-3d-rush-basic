@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "t_bg_clouds",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fast",
+  "resize": "full",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 19599,
+    "sourceLastModified": 1772697253854,
+    "settingsHash": "2|q=0|r=0|m=false"
+  }
+}

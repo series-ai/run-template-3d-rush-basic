@@ -1,0 +1,111 @@
+{
+  "schema": "stow.prefab",
+  "version": 0,
+  "meta": {
+    "name": "burger",
+    "created": "2026-03-05"
+  },
+  "mounts": [
+    {
+      "alias": "burgershop",
+      "path": "burgershop.stow"
+    }
+  ],
+  "root": {
+    "name": "burger",
+    "components": [
+      {
+        "type": "transform",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "children": [
+      {
+        "name": "restaurant_display_prop_burger",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              3,
+              3
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "burgershop",
+              "assetId": "restaurant_display_prop_burger"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          },
+          {
+            "type": "mesh_collider",
+            "colliderType": "bounding_box",
+            "bodyType": "kinematic",
+            "isSensor": false
+          }
+        ],
+        "children": [
+          {
+            "name": "restaurant_display_prop_burger_bun_bottom",
+            "components": [
+              {
+                "type": "transform",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              {
+                "type": "stow_mesh",
+                "mesh": {
+                  "pack": "burgershop",
+                  "assetId": "restaurant_display_prop_burger_bun_bottom"
+                },
+                "castShadow": true,
+                "receiveShadow": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
