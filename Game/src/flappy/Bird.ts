@@ -33,8 +33,8 @@ export class Bird extends Component {
                     if (FlappyGame.getState() !== GameState.Playing) return
 
                     const pickup = other.getComponentInParent(Pickup)
-                    if (pickup && !pickup.isCollected()) {
-                        pickup.collect()
+                    if (pickup) {
+                        if (!pickup.isCollected()) pickup.collect()
                     } else {
                         FlappyGame.die()
                     }
