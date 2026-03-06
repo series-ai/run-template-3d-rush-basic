@@ -22,7 +22,7 @@
       "@/*": ["Game/src/*"]
     }
   },
-  "include": ["Game/src/**/*"],
+  "include": ["Game/src/**/*", "vite-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
 

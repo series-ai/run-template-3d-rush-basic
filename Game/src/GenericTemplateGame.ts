@@ -58,14 +58,18 @@ export class GenericTemplateGame extends VenusGame {
 
     private async setup(): Promise<void> {
         await this.initializeSystems()
-        PhysicsSystem.initializeDebug(this.scene)
-        PhysicsSystem.setDebugEnabled(false)
+        if (import.meta.env.DEV) {
+            PhysicsSystem.initializeDebug(this.scene)
+            PhysicsSystem.setDebugEnabled(false)
+        }
         this.setupLighting()
         this.setupBackground()
         this.setupCamera()
         FlappyGame.initialize()
         FlappyGame.setOnFirstStart(() => this.startMusic())
-        this.createDebugToggle()
+        if (import.meta.env.DEV) {
+            this.createDebugToggle()
+        }
     }
 
     private async initializeSystems(): Promise<void> {
