@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
 import { Pipe } from "./Pipe"
-import { Burger } from "./Burger"
+import { Pickup } from "./Pickup"
 import { FlappyGame, GameState } from "./FlappyGame"
 
 const PIPE_SPACING = 10
@@ -12,7 +12,7 @@ const OFFSCREEN_MARGIN = 2
 
 export class PipeSpawner extends Component {
     private pipes: { gameObject: GameObject; pipe: Pipe }[] = []
-    private burgers: { gameObject: GameObject; burger: Burger }[] = []
+    private pickups: { gameObject: GameObject; pickup: Pickup }[] = []
     private distanceSinceLastSpawn = 0
     private fallbackSpawnZ = 20
 
@@ -35,11 +35,11 @@ export class PipeSpawner extends Component {
             }
         }
 
-        for (let i = this.burgers.length - 1; i >= 0; i--) {
-            const entry = this.burgers[i]
-            if (entry.burger.isCollected() || entry.burger.getZ() < this.getDespawnZ()) {
-                if (!entry.burger.isCollected()) entry.gameObject.dispose()
-                this.burgers.splice(i, 1)
+        for (let i = this.pickups.length - 1; i >= 0; i--) {
+            const entry = this.pickups[i]
+            if (entry.pickup.isCollected() || entry.pickup.getZ() < this.getDespawnZ()) {
+                if (!entry.pickup.isCollected()) entry.gameObject.dispose()
+                this.pickups.splice(i, 1)
             }
         }
     }
@@ -54,11 +54,11 @@ export class PipeSpawner extends Component {
         pipeObject.addComponent(pipeComponent)
         this.pipes.push({ gameObject: pipeObject, pipe: pipeComponent })
 
-        const burgerObject = new GameObject("Burger")
-        burgerObject.position.set(0, gapY, spawnZ)
-        const burgerComponent = new Burger()
-        burgerObject.addComponent(burgerComponent)
-        this.burgers.push({ gameObject: burgerObject, burger: burgerComponent })
+        const pickupObject = new GameObject("Pickup")
+        pickupObject.position.set(0, gapY, spawnZ)
+        const pickupComponent = new Pickup()
+        pickupObject.addComponent(pickupComponent)
+        this.pickups.push({ gameObject: pickupObject, pickup: pickupComponent })
     }
 
     private getSpawnZ(): number {
@@ -96,11 +96,11 @@ export class PipeSpawner extends Component {
         for (const entry of this.pipes) {
             entry.gameObject.dispose()
         }
-        for (const entry of this.burgers) {
-            if (!entry.burger.isCollected()) entry.gameObject.dispose()
+        for (const entry of this.pickups) {
+            if (!entry.pickup.isCollected()) entry.gameObject.dispose()
         }
         this.pipes = []
-        this.burgers = []
+        this.pickups = []
         this.distanceSinceLastSpawn = 0
     }
 }

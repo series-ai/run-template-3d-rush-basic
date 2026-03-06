@@ -1,5 +1,5 @@
 export { Bird } from "./Bird"
-export { Burger } from "./Burger"
+export { Pickup } from "./Pickup"
 export { Pipe } from "./Pipe"
 export { PipeSpawner } from "./PipeSpawner"
 export { FlappyGame, GameState } from "./FlappyGame"

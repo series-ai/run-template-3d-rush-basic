@@ -2,8 +2,8 @@
   "schema": "stow.prefab",
   "version": 0,
   "meta": {
-    "name": "saw",
-    "created": "2026-03-05"
+    "name": "pickup",
+    "created": "2026-03-06"
   },
   "mounts": [
     {
@@ -12,7 +12,7 @@
     }
   ],
   "root": {
-    "name": "saw",
+    "name": "pickup",
     "components": [
       {
         "type": "transform",
@@ -35,7 +35,7 @@
     ],
     "children": [
       {
-        "name": "arm",
+        "name": "nut",
         "components": [
           {
             "type": "transform",
@@ -50,16 +50,16 @@
               0
             ],
             "scale": [
-              0.6446947205758019,
-              1.5,
-              1.5
+              1,
+              1,
+              1
             ]
           },
           {
             "type": "stow_mesh",
             "mesh": {
               "pack": "default",
-              "assetId": "arm"
+              "assetId": "nut"
             },
             "castShadow": true,
             "receiveShadow": true
@@ -67,44 +67,8 @@
           {
             "type": "mesh_collider",
             "colliderType": "convex_hull",
-            "bodyType": "kinematic"
-          }
-        ]
-      },
-      {
-        "name": "blade",
-        "components": [
-          {
-            "type": "transform",
-            "position": [
-              0,
-              0,
-              0
-            ],
-            "rotation": [
-              0,
-              0,
-              0
-            ],
-            "scale": [
-              0.6766156092565493,
-              0.8,
-              0.8
-            ]
-          },
-          {
-            "type": "stow_mesh",
-            "mesh": {
-              "pack": "default",
-              "assetId": "blade"
-            },
-            "castShadow": true,
-            "receiveShadow": true
-          },
-          {
-            "type": "mesh_collider",
-            "colliderType": "convex_hull",
-            "bodyType": "kinematic"
+            "bodyType": "kinematic",
+            "isSensor": false
           }
         ]
       }

@@ -8,14 +8,14 @@ const WOBBLE_SPEED = 2.5
 const WOBBLE_ANGLE = 0.25
 const BASE_TILT = -0.5
 
-export class Burger extends Component {
+export class Pickup extends Component {
     private prefab!: PrefabInstance
     private collected = false
     private wobbleTime = Math.random() * Math.PI * 2
     private tweenScale = 1
 
     protected onCreate(): void {
-        this.prefab = Prefabs.instantiate("burger", this.gameObject)
+        this.prefab = Prefabs.instantiate("pickup", this.gameObject)
     }
 
     public update(deltaTime: number): void {

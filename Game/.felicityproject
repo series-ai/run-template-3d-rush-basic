@@ -5,6 +5,9 @@
   "packs": [
     {
       "name": "default"
+    },
+    {
+      "name": "new-pack"
     }
   ]
 }

@@ -2,7 +2,7 @@ import * as THREE from "three"
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
 import { BoxColliderComponent, Main2DAudioBank, PlayAudioOneShot2D } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
-import { Burger } from "./Burger"
+import { Pickup } from "./Pickup"
 
 const GRAVITY = -25
 const FLAP_VELOCITY = 9
@@ -32,9 +32,9 @@ export class Bird extends Component {
                 rb.registerOnTriggerEnter((other: GameObject) => {
                     if (FlappyGame.getState() !== GameState.Playing) return
 
-                    const burger = other.getComponentInParent(Burger)
-                    if (burger) {
-                        burger.collect()
+                    const pickup = other.getComponentInParent(Pickup)
+                    if (pickup && !pickup.isCollected()) {
+                        pickup.collect()
                     } else {
                         FlappyGame.die()
                     }
