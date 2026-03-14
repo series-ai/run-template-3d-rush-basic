@@ -7,8 +7,9 @@ export default defineConfig(() => ({
   // Use relative paths - works everywhere including GitHub Pages
   base: "./",
   resolve: {
+    dedupe: ['three', '@series-inc/rundot-game-sdk', '@series-inc/stowkit-three-loader', '@series-inc/stowkit-reader'],
     alias: {
-      "@": path.resolve(__dirname, "./Game/src"),
+      "@": path.resolve(__dirname, "./src"),
       "@capacitor/core": path.resolve(__dirname, "./stubs/capacitor.ts"),
       "@capacitor/app": path.resolve(__dirname, "./stubs/capacitor.ts"),
       "@capacitor/local-notifications": path.resolve(__dirname, "./stubs/capacitor.ts"),
@@ -31,7 +32,7 @@ export default defineConfig(() => ({
     target: "esnext",
     sourcemap: false,
   },
-  publicDir: "Game/public",
+  publicDir: "public",
   plugins: [
     wasm(),
     topLevelAwait(),

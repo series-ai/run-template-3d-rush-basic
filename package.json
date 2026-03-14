@@ -12,13 +12,16 @@
   "dependencies": {
     "@dimforge/rapier3d": "^0.11.2",
     "@dimforge/rapier3d-compat": "^0.11.2",
-    "@series-inc/rundot-3d-engine": "^0.5.15",
-    "@series-inc/rundot-game-sdk": "^5.5.4",
+    "@series-inc/rundot-3d-engine": "^0.6.19",
+    "@series-inc/stowkit-three-loader": "^0.1.50",
     "three": "^0.180.0",
     "three-stdlib": "^2.36.0"
   },
+  "peerDependencies": {
+    "@series-inc/rundot-game-sdk": "^5.5.4"
+  },
   "devDependencies": {
-    "@series-inc/stowkit-reader": "^0.1.42",
+    "@series-inc/stowkit-reader": "^0.1.45",
     "@types/node": "^20.11.16",
     "@types/three": "^0.180.0",
     "typescript": "^5.3.3",

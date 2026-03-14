@@ -1,0 +1,134 @@
+{
+  "schema": "stow.prefab",
+  "version": 0,
+  "meta": {
+    "name": "saw",
+    "created": "2026-03-13"
+  },
+  "mounts": [
+    {
+      "alias": "default",
+      "path": "default.stow"
+    }
+  ],
+  "root": {
+    "name": "saw",
+    "components": [
+      {
+        "type": "transform",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "children": [
+      {
+        "name": "arm",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "arm"
+            },
+            "subMesh": "Arm",
+            "castShadow": false,
+            "receiveShadow": true
+          },
+          {
+            "type": "mesh_collider",
+            "colliderType": "bounding_box",
+            "bodyType": "kinematic",
+            "isSensor": false,
+            "excludeChildren": true
+          }
+        ],
+        "children": [
+          {
+            "name": "saw",
+            "components": [
+              {
+                "type": "transform",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              {
+                "type": "stow_mesh",
+                "mesh": {
+                  "pack": "default",
+                  "assetId": "arm"
+                },
+                "subMesh": "Saw",
+                "castShadow": false,
+                "receiveShadow": true
+              },
+              {
+                "type": "sphere",
+                "radius": 1.92,
+                "offset": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                "depthTest": true,
+                "wireframe": true,
+                "isCollider": true,
+                "bodyType": "kinematic",
+                "isSensor": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

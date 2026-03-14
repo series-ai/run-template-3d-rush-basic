@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "stringId": "jump_1",
+  "tags": [],
+  "pack": "default",
+  "type": "audio",
+  "aacQuality": "medium",
+  "sampleRate": "auto",
+  "cache": {
+    "sourceSize": 266922,
+    "sourceLastModified": 1773183222718.3176,
+    "settingsHash": "3|aq=2|sr=0"
+  }
+}

@@ -19,10 +19,10 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["Game/src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["Game/src/**/*", "vite-env.d.ts"],
+  "include": ["src/**/*", "vite-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
 

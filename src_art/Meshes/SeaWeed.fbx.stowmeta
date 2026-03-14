@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "seaweed",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "SeaWeedMat.stowmat"
+  },
+  "cache": {
+    "sourceSize": 29408,
+    "sourceLastModified": 1773169211061.0388,
+    "settingsHash": "1|dq=1"
+  }
+}

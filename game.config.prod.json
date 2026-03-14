@@ -1,5 +1,5 @@
 {
   "gameId": "IkTHGHmFVt4uRTJg2sjT",
   "relativePathToDistFolder": "dist",
-  "usesPreloader": false
+  "usesPreloader": true
 }

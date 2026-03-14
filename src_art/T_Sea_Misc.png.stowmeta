@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "t_sea_misc",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fast",
+  "resize": "quarter",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 380594,
+    "sourceLastModified": 1773452398947.0046,
+    "settingsHash": "2|q=1|r=2|m=false"
+  }
+}

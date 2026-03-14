@@ -1,0 +1,2250 @@
+{
+  "schema": "stow.prefab",
+  "version": 0,
+  "meta": {
+    "name": "Background",
+    "created": "2026-03-14"
+  },
+  "mounts": [
+    {
+      "alias": "default",
+      "path": "default.stow"
+    }
+  ],
+  "root": {
+    "name": "Background",
+    "components": [
+      {
+        "type": "transform",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "static_batcher"
+      }
+    ],
+    "children": [
+      {
+        "name": "ground",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "ground"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_1",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              22.98308526639567,
+              -1.0558079542330763,
+              19.915655268568415
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              1.3688414698675315,
+              0,
+              -8.565743441573558
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_1",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              44.49110353717971,
+              -6.38857548425356,
+              31.829578238683496
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              11.323543800121138,
+              25.88416128798535,
+              11.323543800121138
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              4.904535620544955,
+              -4.99663480212019,
+              129.2915313759584
+            ],
+            "rotation": [
+              180,
+              -63.85074668129842,
+              180
+            ],
+            "scale": [
+              11.323543800121138,
+              70.3906047101221,
+              13.688741026245594
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              51.36758398784861,
+              -4.99663480212019,
+              177.8948580772713
+            ],
+            "rotation": [
+              180,
+              18.776130748214324,
+              -180
+            ],
+            "scale": [
+              21.56140111724844,
+              62.54634485156404,
+              11.323543800121138
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              22.281179179320723,
+              -4.99663480212019,
+              177.8948580772713
+            ],
+            "rotation": [
+              180,
+              18.776130748214324,
+              -180
+            ],
+            "scale": [
+              21.56140111724844,
+              123.29004869490491,
+              26.94265099310006
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              74.4331762466316,
+              -10.267787846534493,
+              110.05220948918785
+            ],
+            "rotation": [
+              179.27886754837476,
+              23.734931336824562,
+              179.10057635554725
+            ],
+            "scale": [
+              11.323543800121138,
+              93.62170444708696,
+              11.323543800121138
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -68.36862496420497,
+              -43.696606477387874,
+              178.38448107595775
+            ],
+            "rotation": [
+              1.5117019502030444,
+              64.1049623200093,
+              -2.5496772068012787
+            ],
+            "scale": [
+              36.6108536677291,
+              84.7712803329614,
+              52.81280193578491
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_05",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              88.73722923390153,
+              -1.3216008178079983,
+              10.98540046134335
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              11.323543800121138,
+              13.1441712675215,
+              11.323543800121138
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_06",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -73.65991864774378,
+              -1.3216008178079983,
+              23.709884130538097
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              6.8326558171057705,
+              7.931227172107069,
+              6.8326558171057705
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -6.653173852219407,
+              0.5728996827751789,
+              26.986485160277304
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              22.033056338415232,
+              -2.500017381630539,
+              35.00053534093243
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -2.4533208594448332,
+              0,
+              8.293026527759878
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              11.60654470174859,
+              0,
+              20.910721094528498
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              2.553138644354236,
+              2.553138644354236,
+              2.553138644354236
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              53.93680095153244,
+              -0.3328896060108604,
+              11.63442491972018
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.8829253295856059,
+              1.8829253295856059,
+              1.8829253295856059
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_05",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              65.68114403538513,
+              0,
+              30.68323062946603
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_06",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              65.68114403538513,
+              1.0032515679478156,
+              30.68323062946603
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_07",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              107.69182123991088,
+              0.06591907528426111,
+              -5.338073178726162
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_08",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              68.86297105464071,
+              0.003313898909344193,
+              8.406404505725991
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_09",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -35.546769622440195,
+              -0.34506447736973644,
+              12.849232791666985
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_10",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -12.291633806060407,
+              0.22676384389829174,
+              16.74562460389816
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_11",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -47.64985337272681,
+              1.0032515679478156,
+              32.21120644442091
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_12",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -27.707622954657296,
+              0.517953334512296,
+              23.811426040225307
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_13",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -54.36043670257833,
+              -0.1350699961370352,
+              -0.5427351799258098
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.5809806080944928,
+              0.5809806080944928,
+              0.5809806080944928
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_14",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -27.236964612843693,
+              -0.012907035627131247,
+              0.27726803886203033
+            ],
+            "rotation": [
+              0,
+              -42.49954405408641,
+              0
+            ],
+            "scale": [
+              2.6410062394402254,
+              2.6410062394402254,
+              2.6410062394402254
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_15",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              27.243864778960933,
+              -0.21189040162050787,
+              6.981792822284359
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_16",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              53.699153952777024,
+              -0.1941993413086851,
+              -0.7808930057825014
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_17",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -112.8651418862248,
+              -0.0018945390684983465,
+              23.505042566808065
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.9114386836734578,
+              1.9114386836734578,
+              1.9114386836734578
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_18",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -97.13035423234166,
+              -0.07936503052705124,
+              -4.074932183338277
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.7734966520905973,
+              1.7734966520905973,
+              1.7734966520905973
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_19",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -114.66997840135754,
+              0.17228961617669558,
+              4.455684648894518
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_20",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              118.18985887458221,
+              0.06451101516293889,
+              13.775995578310486
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_21",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              98.54434053925425,
+              -0.03292343225398575,
+              25.049690304237835
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              2.0840707907033815,
+              2.0840707907033815,
+              2.0840707907033815
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              1.261530761029654,
+              0.40237885366506776,
+              18.73835597197194
+            ],
+            "rotation": [
+              0,
+              82.7238320451939,
+              0
+            ],
+            "scale": [
+              3.3849604577568093,
+              3.3849604577568093,
+              3.3849604577568093
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              62.0761838770383,
+              0.04946067026596046,
+              12.622923521525777
+            ],
+            "rotation": [
+              -180,
+              17.290900640672504,
+              -180
+            ],
+            "scale": [
+              6.530962697637344,
+              6.530962697637344,
+              6.530962697637344
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              99.5273244233014,
+              0.13313909515399536,
+              -11.59234242798432
+            ],
+            "rotation": [
+              -180,
+              -47.093939816334355,
+              -180
+            ],
+            "scale": [
+              3.3849604577568093,
+              3.3849604577568093,
+              3.3849604577568093
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              79.80457299953581,
+              4.66932885994377,
+              42.734069794084625
+            ],
+            "rotation": [
+              158.21806023677348,
+              13.583427155363685,
+              -172.13785288791203
+            ],
+            "scale": [
+              3.3849604577568093,
+              3.3849604577568093,
+              3.3849604577568093
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -92.94162885122381,
+              0.06335066023021119,
+              5.3927855754337735
+            ],
+            "rotation": [
+              -180,
+              27.563664026920588,
+              -180
+            ],
+            "scale": [
+              3.3849604577568093,
+              3.3849604577568093,
+              3.3849604577568093
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_05",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -32.451660349311084,
+              1.4489476449800605,
+              35.69804897792613
+            ],
+            "rotation": [
+              168.98001418140916,
+              -22.188710703992566,
+              -180
+            ],
+            "scale": [
+              3.3849604577568093,
+              3.3849604577568093,
+              3.3849604577568093
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -15.87431547826306,
+              0,
+              8.310182023682657
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -53.63394324963198,
+              0,
+              23.253746239943183
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              0.26157798483090033,
+              0,
+              33.03271629418221
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              74.37785908548295,
+              0,
+              23.388840208353688
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_05",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              109.05548151002324,
+              0,
+              46.03885026976603
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_06",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              16.238690856802364,
+              -1.6636970906993902,
+              93.79488836895663
+            ],
+            "rotation": [
+              0,
+              -60.370653887138246,
+              0
+            ],
+            "scale": [
+              7.276614024883857,
+              7.276614024883857,
+              7.276614024883857
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_07",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              33.375404110361956,
+              -8.352467659537297,
+              134.3124193150004
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7.276614024883857,
+              7.276614024883857,
+              7.276614024883857
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_08",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -20.056805668448632,
+              0,
+              189.75808974693223
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7.276614024883857,
+              7.276614024883857,
+              7.276614024883857
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_09",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -53.401246712610494,
+              3.725164182870685,
+              108.4338202217261
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7.276614024883857,
+              7.276614024883857,
+              7.276614024883857
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "starfish",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -32.85545157779197,
+              -3.552713678800501e-15,
+              6.2194064665830595
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.808316529082076,
+              4.808316529082076,
+              4.808316529082076
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "starfish"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "starfish_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              16.198189231210954,
+              0.02509543595860908,
+              4.050401396181375
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.808316529082076,
+              4.808316529082076,
+              4.808316529082076
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "starfish"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "starfish_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              60.27836863485141,
+              -0.2106102499926985,
+              23.036927398136832
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.808316529082076,
+              4.808316529082076,
+              4.808316529082076
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "starfish"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "starfish_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -52.45129688781571,
+              3.728945573891685,
+              83.06872229859144
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.808316529082076,
+              4.808316529082076,
+              4.808316529082076
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "starfish"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "starfish_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -73.52376152289354,
+              2.2674587072683847,
+              18.131187257452567
+            ],
+            "rotation": [
+              -20.48446789087248,
+              0,
+              0
+            ],
+            "scale": [
+              4.808316529082076,
+              4.808316529082076,
+              4.808316529082076
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "starfish"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_10",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              27.079186857104563,
+              0,
+              -5.939682148463191
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "coral_2_11",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              46.810155131123935,
+              0,
+              15.75398483417203
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.2207234387468255,
+              3.2207234387468255,
+              3.2207234387468255
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coral_2"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "rocks_07",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -45.66743320972853,
+              2.284039520055921,
+              57.27427394394758
+            ],
+            "rotation": [
+              0,
+              0,
+              -5.70828916150002
+            ],
+            "scale": [
+              12.198848271928377,
+              7.931227172107069,
+              6.8326558171057705
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "rocks_1"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              9.969256931727596,
+              -0.1904602580971444,
+              3.2794018356979358
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_01",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -27.11774015974807,
+              0.42456069054173673,
+              26.49252583762028
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_02",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              24.552249954332115,
+              -3.214421117305569,
+              40.04043909276743
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_03",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -44,
+              2.840426384548067,
+              46
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_04",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              33.04324042557232,
+              -1.833147460060495,
+              68.78065448578985
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_05",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              98.1442467252299,
+              -0.050884658901298785,
+              34.07668394418089
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_06",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -116.52396887978932,
+              -0.27968428332063633,
+              -12.155408299190682
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_07",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -50.70256853655161,
+              -0.29282742293789177,
+              10.499117813913642
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_08",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -89.8806994104369,
+              3.6162189854023215,
+              62.615145309718585
+            ],
+            "rotation": [
+              0,
+              0,
+              8.229915150131058
+            ],
+            "scale": [
+              4.472136332717797,
+              4.472136332717797,
+              4.472136332717797
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "shell_06",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -78.07302266751708,
+              3.8943615704571544,
+              39.65118899749313
+            ],
+            "rotation": [
+              -13.136516503344708,
+              -11.237100978148264,
+              7.90413073276397e-15
+            ],
+            "scale": [
+              6.530962697637344,
+              6.530962697637344,
+              6.530962697637344
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "shell"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_09",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              3.972352459703359,
+              5.102318715967133,
+              207.81672258613216
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              13.032571325781758,
+              13.032571325781758,
+              13.032571325781758
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_10",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              -87.02031424574729,
+              8.071999177040787,
+              217.27975333179532
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              13.032571325781758,
+              13.032571325781758,
+              13.032571325781758
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      },
+      {
+        "name": "seaweed_11",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              83.75957653793635,
+              -0.9128729325255698,
+              206.51380295693164
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              13.032571325781758,
+              13.032571325781758,
+              13.032571325781758
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "seaweed"
+            },
+            "castShadow": true,
+            "receiveShadow": true
+          }
+        ]
+      }
+    ]
+  }
+}

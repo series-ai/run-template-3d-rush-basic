@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "godrays",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fastest",
+  "resize": "half",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 4528,
+    "sourceLastModified": 1773166618243.577,
+    "settingsHash": "2|q=0|r=1|m=false"
+  }
+}

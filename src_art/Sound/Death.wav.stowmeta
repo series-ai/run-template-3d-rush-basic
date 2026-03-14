@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "stringId": "death",
+  "tags": [],
+  "pack": "default",
+  "type": "audio",
+  "aacQuality": "medium",
+  "sampleRate": "auto",
+  "cache": {
+    "sourceSize": 307214,
+    "sourceLastModified": 1773183222964.198,
+    "settingsHash": "3|aq=2|sr=0"
+  }
+}

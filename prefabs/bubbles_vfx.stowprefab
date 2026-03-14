@@ -1,0 +1,254 @@
+{
+  "schema": "stow.prefab",
+  "version": 0,
+  "meta": {
+    "name": "bubbles_vfx",
+    "created": "2026-03-10"
+  },
+  "mounts": [
+    {
+      "alias": "default",
+      "path": "default.stow"
+    }
+  ],
+  "root": {
+    "name": "bubbles_vfx",
+    "components": [
+      {
+        "type": "transform",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "particle_system",
+        "main": {
+          "duration": 5,
+          "looping": true,
+          "startLifetimeMin": 1.5,
+          "startLifetimeMax": 3,
+          "startSpeedMin": 0,
+          "startSpeedMax": 0,
+          "startSizeMin": 2,
+          "startSizeMax": 3,
+          "gravityModifier": 1,
+          "maxParticles": 300,
+          "startColor": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "useRandomStartColors": false,
+          "randomStartColors": [],
+          "colorOverLifetime": false,
+          "endColor": [
+            0.5,
+            0.5,
+            0.5,
+            0
+          ],
+          "useMidColor": false,
+          "midColor": [
+            0.8,
+            0.8,
+            0.8,
+            0.7
+          ],
+          "opacityOverLifetime": {
+            "mode": "curve",
+            "constant": 1,
+            "curve": {
+              "keys": [
+                {
+                  "time": 0,
+                  "value": 0.005415482954545455,
+                  "inTangent": 3.7058823529411766,
+                  "outTangent": 3.7058823529411766
+                },
+                {
+                  "time": 0.14743589743589744,
+                  "value": 0.9940518465909091,
+                  "inTangent": 0,
+                  "outTangent": 0
+                },
+                {
+                  "time": 1,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                }
+              ]
+            }
+          },
+          "simulationSpace": "world"
+        },
+        "emission": {
+          "enabled": true,
+          "mode": "constant",
+          "rateOverTime": 10,
+          "burstCount": 30,
+          "burstCycles": 1,
+          "burstInterval": 0.5
+        },
+        "shape": {
+          "enabled": true,
+          "shape": "sphere",
+          "previewShape": true,
+          "radius": 1,
+          "coneAngleMin": 15,
+          "coneAngleMax": 30,
+          "coneDirection": [
+            0,
+            1,
+            0
+          ],
+          "boxSize": [
+            1,
+            1,
+            1
+          ],
+          "sphereRadius": 1
+        },
+        "velocity": {
+          "enabled": true,
+          "gravity": [
+            0,
+            8,
+            -5
+          ],
+          "damping": 3,
+          "speedOverLifetime": {
+            "mode": "constant",
+            "constant": 1,
+            "curve": {
+              "keys": [
+                {
+                  "time": 0,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                },
+                {
+                  "time": 1,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                }
+              ]
+            }
+          },
+          "orbitalX": 0,
+          "orbitalY": 0,
+          "orbitalZ": 0.1
+        },
+        "size": {
+          "enabled": true,
+          "endSizeMin": 0.2,
+          "endSizeMax": 0.5,
+          "sizeOverLifetime": {
+            "mode": "constant",
+            "constant": 1,
+            "curve": {
+              "keys": [
+                {
+                  "time": 0,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                },
+                {
+                  "time": 1,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                }
+              ]
+            }
+          }
+        },
+        "rotation": {
+          "enabled": false,
+          "startAngleMin": 0,
+          "startAngleMax": 360,
+          "angularVelocityMin": -180,
+          "angularVelocityMax": 180,
+          "rotationOverLifetime": {
+            "mode": "constant",
+            "constant": 1,
+            "curve": {
+              "keys": [
+                {
+                  "time": 0,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                },
+                {
+                  "time": 1,
+                  "value": 1,
+                  "inTangent": 0,
+                  "outTangent": 0
+                }
+              ]
+            }
+          }
+        },
+        "noise": {
+          "enabled": true,
+          "positionAmount": 0.3,
+          "rotationAmount": 0,
+          "sizeAmount": 0,
+          "strengthX": 1,
+          "strengthY": 2,
+          "frequency": 1,
+          "scrollSpeed": 0,
+          "octaves": 1
+        },
+        "textureSheet": {
+          "enabled": false,
+          "timeMode": "fps",
+          "rows": 2,
+          "columns": 5,
+          "fps": 15,
+          "loop": true,
+          "randomStartFrame": false
+        },
+        "collision": {
+          "enabled": false,
+          "planeY": 0,
+          "restitution": 0.7,
+          "friction": 0.5,
+          "killAfterBounces": 2
+        },
+        "renderer": {
+          "renderMode": "billboard",
+          "texture": {
+            "pack": "default",
+            "assetId": "bubble_sheet"
+          },
+          "blending": "additive",
+          "premultipliedAlpha": false,
+          "maskFromLuminance": false,
+          "velocityScale": 0.4,
+          "stretchWithVelocity": false,
+          "alignToVelocity": false,
+          "flipX": 0,
+          "flipY": 0
+        }
+      }
+    ]
+  }
+}

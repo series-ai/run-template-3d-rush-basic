@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "t_seaweed",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fastest",
+  "resize": "half",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 865826,
+    "sourceLastModified": 1773452440151.6873,
+    "settingsHash": "2|q=0|r=1|m=false"
+  }
+}

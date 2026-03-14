@@ -1,0 +1,77 @@
+{
+  "schema": "stow.prefab",
+  "version": 0,
+  "meta": {
+    "name": "pickup",
+    "created": "2026-03-14"
+  },
+  "mounts": [
+    {
+      "alias": "default",
+      "path": "default.stow"
+    }
+  ],
+  "root": {
+    "name": "pickup",
+    "components": [
+      {
+        "type": "transform",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "children": [
+      {
+        "name": "coin",
+        "components": [
+          {
+            "type": "transform",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              3,
+              3
+            ]
+          },
+          {
+            "type": "stow_mesh",
+            "mesh": {
+              "pack": "default",
+              "assetId": "coin"
+            },
+            "castShadow": false,
+            "receiveShadow": false
+          },
+          {
+            "type": "mesh_collider",
+            "colliderType": "bounding_box",
+            "bodyType": "kinematic",
+            "isSensor": false
+          }
+        ]
+      }
+    ]
+  }
+}

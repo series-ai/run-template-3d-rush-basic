@@ -6,7 +6,7 @@ import { StowKitReader } from '@series-inc/stowkit-reader';
 // ---- CONFIGURATION ----
 const INDEX_SUFFIX = 'Assets';
 const LEGACY_INDEX_NAMES = ['Core.stow Asset List'];
-const CDN_ASSETS_DIR = 'Game/public/cdn-assets';
+const CDN_ASSETS_DIR = 'public/cdn-assets';
 const TARGET_FILES = ['CLAUDE.md', 'AGENTS.md'];
 const MIN_PREFIX_SAVINGS = 10;
 

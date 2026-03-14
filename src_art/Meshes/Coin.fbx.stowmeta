@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "coin",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "M_Sea_Misc_Metallic.stowmat"
+  },
+  "cache": {
+    "sourceSize": 37920,
+    "sourceLastModified": 1773121144096.6865,
+    "settingsHash": "1|dq=1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "ground",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "M_Ground.stowmat"
+  },
+  "cache": {
+    "sourceSize": 113424,
+    "sourceLastModified": 1773120747065.7307,
+    "settingsHash": "1|dq=1"
+  }
+}

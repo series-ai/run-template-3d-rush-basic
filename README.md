@@ -49,22 +49,21 @@ The built files will be in the `dist/` folder.
 
 ```
 3D-Template/
-├── Game/
-│   └── src/
-│       ├── camera/             # Camera controller
-│       │   ├── CameraController.ts
-│       │   └── index.ts
-│       ├── pickups-example/    # Example pickup system
-│       │   ├── Pickup.ts       # Pickup component (click/tap to collect)
-│       │   ├── PickupSpawner.ts
-│       │   ├── PickupSystem.ts
-│       │   ├── PickupTextUI.ts
-│       │   └── index.ts
-│       ├── styles/             # CSS
-│       │   └── main.css
-│       ├── GenericTemplateGame.ts  # Main game setup
-│       ├── Instantiation.ts    # Prefab loader
-│       └── main.ts             # Entry point
+├── src/
+│   ├── camera/             # Camera controller
+│   │   ├── CameraController.ts
+│   │   └── index.ts
+│   ├── pickups-example/    # Example pickup system
+│   │   ├── Pickup.ts       # Pickup component (click/tap to collect)
+│   │   ├── PickupSpawner.ts
+│   │   ├── PickupSystem.ts
+│   │   ├── PickupTextUI.ts
+│   │   └── index.ts
+│   ├── styles/             # CSS
+│   │   └── main.css
+│   ├── GenericTemplateGame.ts  # Main game setup
+│   ├── Instantiation.ts    # Prefab loader
+│   └── main.ts             # Entry point
 ├── public/                     # Static assets
 │   ├── cdn-assets/             # Asset packs
 │   ├── basis/                  # Basis texture decoder
@@ -91,7 +90,7 @@ The built files will be in the `dist/` folder.
 
 ### Modifying Camera Settings
 
-In `Game/src/camera/CameraController.ts`, you can adjust:
+In `src/camera/CameraController.ts`, you can adjust:
 
 ```typescript
 private radius: number = 40 // Distance from origin
@@ -99,7 +98,7 @@ private alpha: number = (230 * Math.PI) / 180 // Horizontal angle
 private beta: number = (35 * Math.PI) / 180 // Vertical angle
 ```
 
-Or enable interactive camera controls in `Game/src/GenericTemplateGame.ts`:
+Or enable interactive camera controls in `src/GenericTemplateGame.ts`:
 
 ```typescript
 private setupCamera(): void {

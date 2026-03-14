@@ -1,0 +1,13 @@
+{
+  "leaderboard": {
+    "requiresToken": false,
+    "scoreOrder": "highest",
+    "minScore": 0,
+    "maxScore": 999999999,
+    "minDurationSec": 10,
+    "maxDurationSec": 3600,
+    "modes": { "default": { "displayName": "Normal" } },
+    "periods": { "alltime": { "type": "alltime" } },
+    "antiCheat": { "enableRateLimit": true, "minTimeBetweenSubmissionsSec": 5 }
+  }
+}

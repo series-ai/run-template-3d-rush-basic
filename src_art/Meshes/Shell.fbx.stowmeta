@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "shell",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "M_Sea_Misc.stowmat"
+  },
+  "cache": {
+    "sourceSize": 27456,
+    "sourceLastModified": 1773116127833.4878,
+    "settingsHash": "1|dq=1"
+  }
+}

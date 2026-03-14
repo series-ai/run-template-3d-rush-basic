@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "stringId": "coin_collect",
+  "tags": [],
+  "pack": "default",
+  "type": "audio",
+  "aacQuality": "medium",
+  "sampleRate": "auto",
+  "cache": {
+    "sourceSize": 287510,
+    "sourceLastModified": 1773183223014.7354,
+    "settingsHash": "3|aq=2|sr=0"
+  }
+}

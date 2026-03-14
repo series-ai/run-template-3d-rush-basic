@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "t_fx_ring",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fastest",
+  "resize": "quarter",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 83939,
+    "sourceLastModified": 1773182172947.3489,
+    "settingsHash": "2|q=0|r=2|m=false"
+  }
+}

@@ -1,7 +1,0 @@
-export { Bird } from "./Bird"
-export { Pickup } from "./Pickup"
-export { Pipe } from "./Pipe"
-export { PipeSpawner } from "./PipeSpawner"
-export { FlappyGame, GameState } from "./FlappyGame"
-export { FlappyUI } from "./FlappyUI"
-export { Spinner } from "./Spinner"

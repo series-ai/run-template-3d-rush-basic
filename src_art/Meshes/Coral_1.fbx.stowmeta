@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "coral_1",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "M_Sea_Misc.stowmat"
+  },
+  "cache": {
+    "sourceSize": 59952,
+    "sourceLastModified": 1773116127806.5884,
+    "settingsHash": "1|dq=1"
+  }
+}

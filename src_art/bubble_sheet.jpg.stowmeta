@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stringId": "bubble_sheet",
+  "tags": [],
+  "pack": "default",
+  "type": "texture",
+  "quality": "fastest",
+  "resize": "quarter",
+  "generateMipmaps": false,
+  "cache": {
+    "sourceSize": 9449,
+    "sourceLastModified": 1773125816466.7305,
+    "settingsHash": "2|q=0|r=2|m=false"
+  }
+}

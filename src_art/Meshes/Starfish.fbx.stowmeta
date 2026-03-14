@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "stringId": "starfish",
+  "tags": [],
+  "pack": "default",
+  "type": "staticMesh",
+  "dracoQuality": "balanced",
+  "materialOverrides": {
+    "0": "M_Sea_Misc.stowmat"
+  },
+  "cache": {
+    "sourceSize": 28160,
+    "sourceLastModified": 1773116127838.6921,
+    "settingsHash": "1|dq=1"
+  }
+}
