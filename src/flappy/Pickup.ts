@@ -1,8 +1,7 @@
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
-import { Easing, Main2DAudioBank, ParticleSystemPrefabComponent, PlayAudioOneShot2D, TweenSystem } from "@series-inc/rundot-3d-engine/systems"
+import { Easing, Main2DAudioBank, ParticleSystemPrefabComponent, PlayAudioOneShot2D, TweenSystem, ShaderComponent } from "@series-inc/rundot-3d-engine/systems"
 import type { PrefabInstance } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
-import { CharacterShader } from "./CharacterShader"
 
 import { Prefabs } from "../Prefabs"
 
@@ -20,7 +19,7 @@ export class Pickup extends Component {
         this.prefab = Prefabs.instantiate("pickup", this.gameObject)
         const coin = this.prefab.getChildByName("coin")
         if (coin) {
-            coin.gameObject.addComponent(new CharacterShader())
+            coin.gameObject.addComponent(new ShaderComponent("fresnel"))
         }
     }
 

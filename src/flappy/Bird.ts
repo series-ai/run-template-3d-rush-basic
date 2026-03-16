@@ -1,6 +1,6 @@
 import * as THREE from "three"
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
-import { RigidBodyComponentThree, Main2DAudioBank, PhysicsSystem, PlayAudioOneShot2D } from "@series-inc/rundot-3d-engine/systems"
+import { RigidBodyComponentThree, Main2DAudioBank, PhysicsSystem, PlayAudioOneShot2D, Input } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
 import { Pipe } from "./Pipe"
 import { Pickup } from "./Pickup"
@@ -27,14 +27,7 @@ export class Bird extends Component {
     private velocityZ = 0
     private jumpIndex = 0
     private deathSpin = 0
-    private boundOnPointerDown: (e: Event) => void
-    private boundOnKeyDown: (e: KeyboardEvent) => void
-
-    constructor() {
-        super()
-        this.boundOnPointerDown = this.onPointerDown.bind(this)
-        this.boundOnKeyDown = this.onKeyDown.bind(this)
-    }
+    private unsubAction?: () => void
 
     protected onCreate(): void {
         const rb = this.getComponent(RigidBodyComponentThree)
@@ -51,23 +44,12 @@ export class Bird extends Component {
             })
         }
 
-        this.addInputListeners()
-    }
-
-    private addInputListeners(): void {
-        document.addEventListener("pointerdown", this.boundOnPointerDown)
-        document.addEventListener("keydown", this.boundOnKeyDown)
-    }
-
-    private onPointerDown(_e: Event): void {
-        this.handleInput()
-    }
-
-    private onKeyDown(e: KeyboardEvent): void {
-        if (e.code === "Space") {
-            e.preventDefault()
-            this.handleInput()
-        }
+        Input.registerAction("jump", [
+            { type: "key", code: "Space" },
+            { type: "pointer" },
+            { type: "touch" },
+        ])
+        this.unsubAction = Input.onAction("jump", () => this.handleInput())
     }
 
     private handleInput(): void {
@@ -185,7 +167,6 @@ export class Bird extends Component {
     }
 
     protected onCleanup(): void {
-        document.removeEventListener("pointerdown", this.boundOnPointerDown)
-        document.removeEventListener("keydown", this.boundOnKeyDown)
+        this.unsubAction?.()
     }
 }

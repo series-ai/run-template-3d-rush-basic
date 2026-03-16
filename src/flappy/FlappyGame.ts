@@ -4,9 +4,8 @@ import { PipeSpawner } from "./PipeSpawner"
 import { BackgroundScroller } from "./BackgroundScroller"
 import { FlappyUI } from "./FlappyUI"
 import { Spinner } from "./Spinner"
-import { CharacterShader } from "./CharacterShader"
 
-import { Main2DAudioBank, ParticleSystemPrefabComponent, PlayAudioOneShot2D } from "@series-inc/rundot-3d-engine/systems"
+import { Main2DAudioBank, ParticleSystemPrefabComponent, PlayAudioOneShot2D, ShaderComponent } from "@series-inc/rundot-3d-engine/systems"
 import { Prefabs } from "../Prefabs"
 import { GenericTemplateGame } from "../GenericTemplateGame"
 import RundotGameAPI from "@series-inc/rundot-game-sdk/api"
@@ -65,7 +64,10 @@ export class FlappyGame {
 
         const botInstance = characterPrefab.getChildByName("bot")
         if (botInstance) {
-            botInstance.gameObject.addComponent(new CharacterShader({ fresnelScale: 0.4, underLightScale: 0.5 }))
+            botInstance.gameObject.addComponent(new ShaderComponent("fresnel", {
+                fresnelIntensity: { value: 0.5 * 0.4 },
+                underLightIntensity: { value: 0.4 * 0.5 },
+            }))
 
             const keyInstance = botInstance.getChildByName("key")
             if (keyInstance) {

@@ -340,10 +340,214 @@ const clone = await stowkit.cloneMesh("name", castShadow, receiveShadow)
 await stowkit.registerMeshForInstancing("coin_batch", "coin_mesh", true, true, 500)
 ```
 
+### InputManager — Keyboard, Pointer, Touch & Custom Actions
+
+The `InputManager` is a singleton that tracks keyboard, pointer, and touch state. Use the `Input` convenience object for quick access.
+
+**Built-in action polling (keyboard):**
+
+```typescript
+import { Input, InputAction } from "@series-inc/rundot-3d-engine/systems"
+
+// Check built-in movement actions
+if (Input.isPressed(InputAction.MOVE_FORWARD)) { /* W key */ }
+if (Input.isKeyPressed("Space")) { /* raw key check */ }
+```
+
+**Pointer & touch state:**
+
+```typescript
+Input.isPointerDown()          // true while mouse/pen is held
+Input.getPointerPosition()     // { x, y } in client coords
+```
+
+**Custom action system — register named actions with multiple trigger types:**
+
+```typescript
+import { Input } from "@series-inc/rundot-3d-engine/systems"
+import type { ActionTrigger } from "@series-inc/rundot-3d-engine/systems"
+
+// Register an action with multiple triggers
+Input.registerAction("jump", [
+    { type: "key", code: "Space" },
+    { type: "pointer" },
+    { type: "touch" },
+])
+
+// Subscribe to action (fires on press) — returns unsubscribe function
+const unsub = Input.onAction("jump", () => {
+    player.flap()
+})
+
+// Polling API
+if (Input.isCustomActionActive("jump")) { /* any trigger held */ }
+
+// Cleanup
+unsub()
+```
+
+**ActionTrigger types:**
+- `{ type: "key", code: string }` — keyboard key (uses `event.code`, e.g. `"Space"`, `"KeyW"`)
+- `{ type: "pointer" }` — mouse or pen pointer down (excludes touch — no double-firing)
+- `{ type: "touch" }` — touch screen tap
+
+**Notes:**
+- On touch devices, pointer events from touch input are automatically skipped to prevent double-firing when an action has both `pointer` and `touch` triggers.
+- `Input.setEnabled(false)` disables all input processing and clears all state.
+- Custom actions registered with `registerAction` also get `preventDefault` on their key triggers.
+
+### ShaderRegistry & ShaderComponent — Shader Library
+
+A registry of named shader presets with a component that applies them to meshes. Shared `time` and `deltaTime` uniforms are updated automatically once per frame.
+
+**Built-in presets:**
+- `"fresnel"` — Fresnel rim lighting, wrap diffuse, specular, under-lighting, directional light. Good for stylized characters and objects.
+- `"wind"` — Simplex noise-based vertex displacement for vegetation animation. Includes depth shader pair for correct shadow casting with alpha clip.
+
+**Usage — apply a shader preset to a GameObject:**
+
+```typescript
+import { ShaderComponent } from "@series-inc/rundot-3d-engine/systems"
+
+// Apply fresnel shader with default settings
+gameObject.addComponent(new ShaderComponent("fresnel"))
+
+// Apply with uniform overrides
+gameObject.addComponent(new ShaderComponent("fresnel", {
+    fresnelIntensity: { value: 0.3 },
+    underLightIntensity: { value: 0.2 },
+}))
+
+// Apply wind shader (vegetation)
+seaweedObject.addComponent(new ShaderComponent("wind"))
+```
+
+**ShaderComponent behavior:**
+- Waits for all `MeshRenderer` components in children to load before applying
+- Traverses all child meshes and replaces materials with ShaderMaterial from the preset
+- Automatically includes fog uniforms and shared time uniforms
+- Sets `preventAutoInstancing = true` (custom materials can't be auto-batched)
+- On cleanup, restores original materials and disposes created shader materials
+- For presets with depth shaders (e.g. `"wind"`), creates `customDepthMaterial` and `customDistanceMaterial` for correct shadow casting
+
+**Registering custom presets:**
+
+```typescript
+import { ShaderRegistry } from "@series-inc/rundot-3d-engine/systems"
+import type { ShaderPreset } from "@series-inc/rundot-3d-engine/systems"
+
+ShaderRegistry.register({
+    name: "myShader",
+    vertexShader: `...`,
+    fragmentShader: `...`,
+    depthVertexShader: `...`,      // optional — for shadow casting
+    depthFragmentShader: `...`,    // optional
+    side: THREE.FrontSide,         // optional (default: FrontSide)
+    transparent: false,            // optional (default: false)
+    fog: true,                     // optional (default: true)
+    toneMapped: false,             // optional (default: false)
+    defaultUniforms: {
+        myColor: { value: new THREE.Color(1, 0, 0) },
+        myFloat: { value: 1.0 },
+    },
+})
+
+// Then use it
+gameObject.addComponent(new ShaderComponent("myShader"))
+```
+
+**Shared uniforms (available in all shader presets):**
+- `time` (float) — `performance.now() * 0.001` (seconds since page load)
+- `deltaTime` (float) — frame delta time
+- `baseMap` (sampler2D) — automatically set from the mesh's existing texture map
+
+**Fresnel preset uniforms:** `sunDir`, `sunColor`, `sunIntensity`, `fresnelColor`, `fresnelPower`, `fresnelIntensity`, `ambientColor`, `ambientIntensity`, `specColor`, `specShininess`, `specIntensity`, `underLightColor`, `underLightIntensity`, `underLightPower`, `rimLightDir`, `rimLightColor`, `rimLightIntensity`
+
+**Wind preset uniforms:** `windStrength`, `windSpeed`, `rootWorldOrigin`, `alphaClip`, `tintColor`, `lightDir`, `ambientColor`, `ambientStrength`
+
+### ObjectPool, GameObjectPool & ScrollingPool — Object Pooling
+
+Generic and specialized pools for reusing objects instead of creating/destroying them each frame.
+
+**ObjectPool — generic pool:**
+
+```typescript
+import { ObjectPool } from "@series-inc/rundot-3d-engine/systems"
+
+const pool = new ObjectPool({
+    create: () => new Bullet(),
+    onAcquire: (b) => b.activate(),
+    onRelease: (b) => b.deactivate(),
+    onDestroy: (b) => b.dispose(),
+})
+
+pool.warm(20)                    // pre-allocate 20 objects
+const bullet = pool.acquire()   // get from pool (or create new)
+pool.release(bullet)             // return to pool
+pool.releaseAll()                // return all active objects
+pool.dispose()                   // destroy everything
+
+pool.activeCount                 // currently in use
+pool.availableCount              // ready to acquire
+pool.totalCount                  // active + available
+```
+
+**GameObjectPool — pool for GameObjects with visibility management:**
+
+```typescript
+import { GameObjectPool } from "@series-inc/rundot-3d-engine/systems"
+
+const pipePool = new GameObjectPool(() => {
+    const go = new GameObject("Pipe")
+    go.addComponent(new MeshRenderer("pipe_mesh"))
+    return go
+})
+
+pipePool.warm(10)
+const pipe = pipePool.acquire()   // visible = true
+pipe.position.set(0, 0, 50)
+
+pipePool.release(pipe)            // visible = false, moved offscreen (y = -9999)
+pipePool.releaseAll()
+pipePool.dispose()                // calls gameObject.dispose() on all
+```
+
+**ScrollingPool — infinite tile recycler for endless/runner games:**
+
+```typescript
+import { ScrollingPool, GameObjectPool } from "@series-inc/rundot-3d-engine/systems"
+
+const tilePool = new GameObjectPool(() => {
+    const tile = Prefabs.instantiate("Background").gameObject
+    return tile
+})
+
+const scroller = new ScrollingPool({
+    pool: tilePool,
+    tileSize: 250,
+    bufferCount: 3,
+    axis: "z",                        // "x" | "y" | "z" (default: "z")
+    onSpawn: (tile, index) => {
+        // customize each spawned tile
+        tile.position.x = 25
+    },
+})
+
+scroller.initialize()                 // spawn initial buffer
+
+// In update loop:
+scroller.update(playerZ)              // spawns ahead, recycles behind
+
+// On restart:
+scroller.reset()
+scroller.initialize()
+
+scroller.dispose()
+```
+
 ### Other Systems
 
 - **AudioSystem** — 2D/3D positional audio with AudioListener management
-- **InputManager** — keyboard, mouse, touch, and gamepad input
 - **LightingSystem** — directional, point, and spot lights with shadow management
 - **NavigationSystem** — A* pathfinding on navigation meshes
 - **ParticleSystem** — GPU particle effects

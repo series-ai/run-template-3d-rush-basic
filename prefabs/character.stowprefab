@@ -3,7 +3,7 @@
   "version": 0,
   "meta": {
     "name": "character",
-    "created": "2026-03-13"
+    "created": "2026-03-14"
   },
   "mounts": [
     {
@@ -46,7 +46,7 @@
           0,
           1
         ],
-        "depthTest": true,
+        "depthTest": false,
         "wireframe": false,
         "isCollider": true,
         "bodyType": "kinematic",

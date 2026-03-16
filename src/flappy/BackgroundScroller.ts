@@ -1,8 +1,8 @@
 import { Component, GameObject } from "@series-inc/rundot-3d-engine"
+import { ShaderComponent } from "@series-inc/rundot-3d-engine/systems"
 import { Prefabs } from "../Prefabs"
 import type { PrefabInstance } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
-import { SeaweedShader } from "./SeaweedShader"
 
 const TILE_SIZE = 250
 const BUFFER_TILES = 2
@@ -28,7 +28,7 @@ export class BackgroundScroller extends Component {
     private applySeaweedShaders(instance: PrefabInstance): void {
         instance.gameObject.traverse((child) => {
             if (/^seaweed/i.test(child.name) && child instanceof GameObject) {
-                child.addComponent(new SeaweedShader())
+                child.addComponent(new ShaderComponent("wind"))
             }
         })
     }

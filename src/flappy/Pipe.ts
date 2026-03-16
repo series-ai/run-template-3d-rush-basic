@@ -1,7 +1,7 @@
 import { Component } from "@series-inc/rundot-3d-engine"
+import { ShaderComponent } from "@series-inc/rundot-3d-engine/systems"
 import { FlappyGame, GameState } from "./FlappyGame"
 import { Spinner } from "./Spinner"
-import { CharacterShader } from "./CharacterShader"
 
 import { Prefabs } from "../Prefabs"
 import type { PrefabInstance } from "@series-inc/rundot-3d-engine/systems"
@@ -40,10 +40,10 @@ export class Pipe extends Component {
     private addBladeSpinner(sawInstance: PrefabInstance): void {
         const armChild = sawInstance.getChildByName("arm")
         if (armChild) {
-            armChild.gameObject.addComponent(new CharacterShader())
+            armChild.gameObject.addComponent(new ShaderComponent("fresnel"))
             const sawChild = armChild.getChildByName("saw")
             if (sawChild) {
-                sawChild.gameObject.addComponent(new CharacterShader())
+                sawChild.gameObject.addComponent(new ShaderComponent("fresnel"))
                 sawChild.gameObject.addComponent(new Spinner("x"))
             }
         }
