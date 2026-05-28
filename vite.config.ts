@@ -1,6 +1,7 @@
 import { defineConfig } from "vite"
 import wasm from "vite-plugin-wasm"
 import topLevelAwait from "vite-plugin-top-level-await"
+import { rundotGameLibrariesPlugin } from "@series-inc/rundot-game-sdk/vite"
 import path from "path"
 
 export default defineConfig(() => ({
@@ -33,6 +34,7 @@ export default defineConfig(() => ({
   },
   publicDir: "Game/public",
   plugins: [
+    rundotGameLibrariesPlugin(),
     wasm(),
     topLevelAwait(),
   ],
